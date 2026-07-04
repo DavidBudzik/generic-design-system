@@ -1,44 +1,41 @@
 import './docs.css';
+import '@gds/core';
 
-// Import all GDS components
-import '@gds/core/button';
-import '@gds/core/layout';
-import '@gds/core/card';
-import '@gds/core/text';
-import '@gds/core/heading';
-import '@gds/core/badge';
-import '@gds/core/avatar';
-import '@gds/core/feedback';
-import '@gds/core/form';
-import '@gds/core/navigation';
-import '@gds/core/overlay';
-import '@gds/core/data';
-import '@gds/core/chat';
+// Theme switching — loads theme CSS files dynamically
+const themePaths: Record<string, string> = {
+  neutral: '/src/themes/neutral.css',
+  dark: '/src/themes/dark.css',
+  warm: '/src/themes/warm.css',
+  gothic: '/src/themes/gothic.css',
+  y2k: '/src/themes/y2k.css',
+  stone: '/src/themes/stone.css',
+  ocean: '/src/themes/ocean.css',
+};
 
-// Import theme CSS
-import '@gds/theme-neutral/theme.css?inline';
-import darkTheme from '@gds/theme-dark/theme.css?raw';
-import warmTheme from '@gds/theme-warm/theme.css?raw';
+const themeStyleEl = document.createElement('style');
+themeStyleEl.id = 'gds-active-theme';
+document.head.appendChild(themeStyleEl);
 
-const darkThemeStyle = document.createElement('style');
-darkThemeStyle.id = 'gds-theme-dark';
-darkThemeStyle.textContent = darkTheme;
-darkThemeStyle.disabled = true;
-document.head.appendChild(darkThemeStyle);
+let currentTheme = 'neutral';
 
-const warmThemeStyle = document.createElement('style');
-warmThemeStyle.id = 'gds-theme-warm';
-warmThemeStyle.textContent = warmTheme;
-warmThemeStyle.disabled = true;
-document.head.appendChild(warmThemeStyle);
-
-function switchTheme(theme: string) {
-  darkThemeStyle.disabled = theme !== 'dark';
-  warmThemeStyle.disabled = theme !== 'warm';
+async function switchTheme(theme: string) {
+  if (theme === currentTheme) return;
+  const path = themePaths[theme];
+  if (!path) return;
+  try {
+    const res = await fetch(path);
+    const css = await res.text();
+    themeStyleEl.textContent = css;
+    currentTheme = theme;
+  } catch (e) {
+    console.error('Failed to load theme:', theme, e);
+  }
   document.querySelectorAll('.theme-switcher button').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.theme === theme);
   });
 }
+
+(window as any).__switchTheme = switchTheme;
 
 const app = document.getElementById('app')!;
 app.innerHTML = `
@@ -46,6 +43,10 @@ app.innerHTML = `
     <button data-theme="neutral" class="active" onclick="window.__switchTheme('neutral')">Neutral</button>
     <button data-theme="dark" onclick="window.__switchTheme('dark')">Dark</button>
     <button data-theme="warm" onclick="window.__switchTheme('warm')">Warm</button>
+    <button data-theme="gothic" onclick="window.__switchTheme('gothic')">Gothic</button>
+    <button data-theme="y2k" onclick="window.__switchTheme('y2k')">Y2K</button>
+    <button data-theme="stone" onclick="window.__switchTheme('stone')">Stone</button>
+    <button data-theme="ocean" onclick="window.__switchTheme('ocean')">Ocean</button>
   </div>
 
   <div class="docs-layout">
@@ -294,9 +295,6 @@ app.innerHTML = `
     </main>
   </div>
 `;
-
-// Wire up theme switcher
-(window as any).__switchTheme = switchTheme;
 
 // Wire up dialog
 const openBtn = document.getElementById('open-dialog-btn');

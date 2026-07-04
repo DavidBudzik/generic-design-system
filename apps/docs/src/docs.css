@@ -1,7 +1,7 @@
 /* GDS Docs Site Styles */
-@import '@gds/core/reset.css';
-@import '@gds/core/gds.css';
-@import '@gds/theme-neutral/theme.css';
+@import './tokens.css';
+@import './reset.css';
+@import './themes/neutral.css';
 
 * {
   box-sizing: border-box;
