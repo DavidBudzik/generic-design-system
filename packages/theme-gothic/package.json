@@ -1,0 +1,17 @@
+{
+  "name": "@gds/theme-gothic",
+  "version": "0.1.0",
+  "description": "Gothic Dark theme for Generic Design System — moody, high contrast, electric purple",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./theme.css": "./dist/theme.css"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc --emitDeclarationOnly && cp src/theme.css dist/theme.css"
+  }
+}

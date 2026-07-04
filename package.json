@@ -8,12 +8,13 @@
   "scripts": {
     "build": "pnpm -r build",
     "dev": "pnpm -r --parallel dev",
-    "test": "pnpm -r test",
+    "test": "web-test-runner",
     "lint": "pnpm -r lint",
     "storybook": "pnpm --filter @gds/docs storybook",
     "cli": "pnpm --filter @gds/cli dev"
   },
   "devDependencies": {
+    "@web/test-runner": "^0.19.0",
     "typescript": "^5.7.0"
   },
   "engines": {

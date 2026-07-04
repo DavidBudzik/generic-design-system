@@ -1,0 +1,17 @@
+{
+  "name": "@gds/theme-stone",
+  "version": "0.1.0",
+  "description": "Stone theme for Generic Design System — natural, earthy, stone-like tones",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./theme.css": "./dist/theme.css"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc --emitDeclarationOnly && cp src/theme.css dist/theme.css"
+  }
+}
