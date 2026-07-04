@@ -1,0 +1,25 @@
+{
+  "name": "@gds/cli",
+  "version": "0.1.0",
+  "description": "CLI for Generic Design System: component docs, templates, scaffolding, agent docs",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "gds": "./bin/gds.mjs"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": ["dist", "bin", "templates"],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}

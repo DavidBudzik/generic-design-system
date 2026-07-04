@@ -1,0 +1,96 @@
+import { css } from 'lit';
+
+/**
+ * Lit CSS template containing all GDS design tokens.
+ * These are scoped to `:host` so that components inside
+ * shadow DOM have access to the tokens regardless of
+ * whether the consumer imports tokens.css globally.
+ */
+export const tokenStyles = css`
+  :host {
+    /* Colors */
+    --gds-color-bg: #ffffff;
+    --gds-color-bg-elevated: #ffffff;
+    --gds-color-bg-muted: #f3f4f6;
+    --gds-color-surface: #ffffff;
+    --gds-color-surface-hover: #f9fafb;
+    --gds-color-border: #e5e7eb;
+    --gds-color-border-strong: #d1d5db;
+    --gds-color-text: #111827;
+    --gds-color-text-muted: #6b7280;
+    --gds-color-text-subtle: #9ca3af;
+    --gds-color-text-inverse: #ffffff;
+    --gds-color-primary: #2563eb;
+    --gds-color-primary-hover: #1d4ed8;
+    --gds-color-primary-active: #1e40af;
+    --gds-color-secondary: #6b7280;
+    --gds-color-secondary-hover: #4b5563;
+    --gds-color-accent: #7c3aed;
+    --gds-color-accent-hover: #6d28d9;
+    --gds-color-success: #16a34a;
+    --gds-color-warning: #d97706;
+    --gds-color-danger: #dc2626;
+    --gds-color-info: #0ea5e9;
+    --gds-color-on-primary: #ffffff;
+    --gds-color-on-secondary: #ffffff;
+    --gds-color-on-accent: #ffffff;
+    --gds-color-focus-ring: rgba(37, 99, 235, 0.4);
+
+    /* Spacing */
+    --gds-space-0: 0;
+    --gds-space-1: 0.25rem;
+    --gds-space-2: 0.5rem;
+    --gds-space-3: 0.75rem;
+    --gds-space-4: 1rem;
+    --gds-space-5: 1.25rem;
+    --gds-space-6: 1.5rem;
+    --gds-space-8: 2rem;
+    --gds-space-10: 2.5rem;
+    --gds-space-12: 3rem;
+    --gds-space-16: 4rem;
+
+    /* Radius */
+    --gds-radius-sm: 4px;
+    --gds-radius-md: 8px;
+    --gds-radius-lg: 12px;
+    --gds-radius-xl: 16px;
+    --gds-radius-full: 9999px;
+
+    /* Typography */
+    --gds-font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --gds-font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    --gds-font-size-xs: 0.75rem;
+    --gds-font-size-sm: 0.875rem;
+    --gds-font-size-md: 1rem;
+    --gds-font-size-lg: 1.125rem;
+    --gds-font-size-xl: 1.25rem;
+    --gds-font-size-2xl: 1.5rem;
+    --gds-font-weight-normal: 400;
+    --gds-font-weight-medium: 500;
+    --gds-font-weight-semibold: 600;
+    --gds-font-weight-bold: 700;
+    --gds-line-height-tight: 1.25;
+    --gds-line-height-normal: 1.5;
+    --gds-line-height-relaxed: 1.75;
+
+    /* Elevation */
+    --gds-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --gds-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --gds-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --gds-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+    /* Motion */
+    --gds-duration-fast: 150ms;
+    --gds-duration-normal: 200ms;
+    --gds-duration-slow: 300ms;
+    --gds-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Z-index */
+    --gds-z-base: 0;
+    --gds-z-dropdown: 100;
+    --gds-z-sticky: 200;
+    --gds-z-overlay: 1000;
+    --gds-z-modal: 1100;
+    --gds-z-toast: 1200;
+  }
+`;

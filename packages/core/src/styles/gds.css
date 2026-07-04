@@ -1,0 +1,68 @@
+@import './tokens.css';
+
+html {
+  font-family: var(--gds-font-sans);
+  font-size: var(--gds-font-size-md);
+  color: var(--gds-color-text);
+  background-color: var(--gds-color-bg);
+}
+
+body {
+  font-size: var(--gds-font-size-md);
+  line-height: var(--gds-line-height-normal);
+}
+
+h1 {
+  font-size: var(--gds-font-size-2xl);
+  font-weight: var(--gds-font-weight-bold);
+  line-height: var(--gds-line-height-tight);
+}
+
+h2 {
+  font-size: var(--gds-font-size-xl);
+  font-weight: var(--gds-font-weight-semibold);
+  line-height: var(--gds-line-height-tight);
+}
+
+h3 {
+  font-size: var(--gds-font-size-lg);
+  font-weight: var(--gds-font-weight-semibold);
+  line-height: var(--gds-line-height-tight);
+}
+
+h4 {
+  font-size: var(--gds-font-size-md);
+  font-weight: var(--gds-font-weight-semibold);
+  line-height: var(--gds-line-height-normal);
+}
+
+h5 {
+  font-size: var(--gds-font-size-sm);
+  font-weight: var(--gds-font-weight-semibold);
+  line-height: var(--gds-line-height-normal);
+}
+
+h6 {
+  font-size: var(--gds-font-size-xs);
+  font-weight: var(--gds-font-weight-semibold);
+  line-height: var(--gds-line-height-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+a {
+  color: var(--gds-color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.125em;
+}
+
+a:hover {
+  color: var(--gds-color-primary-hover);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--gds-font-mono);
+}
